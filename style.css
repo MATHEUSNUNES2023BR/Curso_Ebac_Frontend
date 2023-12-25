@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    margin: 2vw 0 0 8vw;
+}
+.container form input, button{
+    display: block;
+    width: 35vw;
+    height: 4vw;
+}
+.container form button{
+    background-color: rgb(150, 236, 37);
+    font-size: 1.5vw;
+}
+.message-error,
+.message-sucess{
+    display: none;
+    width: 35vw;
+    border: 1px solid black;
+    margin-top: 0.5vw;
+    text-align: center;
+    font-size:2vw;
+}
+.message-error{
+    background-color: red;
+}
+.message-sucess{
+    background-color: green;
+}
