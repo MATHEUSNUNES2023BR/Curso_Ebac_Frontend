@@ -1,0 +1,21 @@
+@use 'cores';
+header{
+    background-color: cores.$headerCor;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 0;
+    }
+    .menu {
+        display: flex;
+        li {
+            font-weight: bold;
+            margin-left: 24px;
+            a {
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+    }
+}
