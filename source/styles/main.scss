@@ -1,0 +1,8 @@
+@use 'var';
+
+body{
+    background-color: var.$corFundo;
+    button{
+        background-color: var.$botaoCor;
+    }
+}
