@@ -30,3 +30,5 @@ function minificaJS(){
 exports.sass = sassCompilador
 exports.minimg = comprimiIMG
 exports.comprimi = minificaJS
+
+gulp.task('default', gulp.parallel(sassCompilador, comprimiIMG, minificaJS));
