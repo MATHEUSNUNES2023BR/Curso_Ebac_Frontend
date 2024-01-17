@@ -4,5 +4,14 @@ body{
     background-color: var.$corFundo;
     button{
         background-color: var.$botaoCor;
+        width: 400px;
+        height: 120px;
+        font-size: 2.5em;
+        cursor: pointer;
     }
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    color: rgb(127, 255, 212);
 }
