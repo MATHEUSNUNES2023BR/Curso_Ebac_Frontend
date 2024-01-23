@@ -24,7 +24,8 @@ main{
         margin: 0 auto;
         margin-top: 25vh;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
         .files{
             display: flex;
             width: 75%;
@@ -47,7 +48,31 @@ main{
             input[type=file]{
                 display: none;
             } 
-
         }
+        .Imagens{
+            display: flex;
+            flex-direction: column;
+            align-self: flex-start;
+            margin-left: 5vw;
+            margin-top: 2vw;
+        }
+        .Imagens_Div{
+            display: flex;
+            width: 400px;
+            height: 60px;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .Imagens_Img{
+            width: 120px;
+            height: 40px;
+            border-radius: 5px;
+        }
+        .Imagens_Span{
+            width: 200px;
+            margin-left: 0.7vw;
+            font-size: 1.2em;
+            color: white;
+       }
     }
 }

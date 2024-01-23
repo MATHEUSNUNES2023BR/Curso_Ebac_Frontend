@@ -26,17 +26,31 @@ module.exports = function(grunt){
             dev:{
                 options:{
                     patterns:
-                    [{
-                        match:"ENDERECO_DO_CSS",
-                        replacement: "./styles/main.css"
-                }]
+                    [
+                        {
+                            match:"ENDERECO_DO_CSS",
+                            replacement: "./styles/main.css"
+                        },
+                        {
+                            match:"ENDERECO_DO_JS",
+                            replacement: "./scripts/main.js"
+                        },
+                    ]
                 },
-                files:[{
-                        expand:true,
-                        flatten: true,
-                        src:['src/index.html'],
-                        dest:'dev/'
-                }]
+                files:[
+                        {
+                            expand:true,
+                            flatten: true,
+                            src:['src/index.html'],
+                            dest:'dev/'
+                        },
+                        {
+                            expand:true,
+                            flatten: true,
+                            src:['src/scripts/main.js'],
+                            dest:'dev/scripts'
+                        },
+                    ]
             },
             dist:{
                 options:{
@@ -65,12 +79,23 @@ module.exports = function(grunt){
                     'prebuild/index.html':'src/index.html'
                 }
             }
+        },
+        imagemin: {
+            dynamic:{
+                files:[{
+                    expand:true,
+                    cwd: 'src/images/',
+                    src:['**/*.{png,jpg,gif}'],
+                    dest: 'dev/images'
+                }]
+            }
         }
     })
 
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-replace');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
+    grunt.loadNpmTasks('grunt-contrib-imagemin')
     grunt.loadNpmTasks('grunt-contrib-watch');
     // Default task(s).
     grunt.registerTask('default', ['watch']);
