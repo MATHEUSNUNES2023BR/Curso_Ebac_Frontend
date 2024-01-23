@@ -16,7 +16,12 @@ module.exports = function(grunt){
                 }
             }
         },
-
+        watch:{
+            less:{
+                files:['src/styles/**/*.less', 'src/index.html'],
+                tasks: ['less:development', 'replace:dev']
+            }
+        },
         replace:{
             dev:{
                 options:{
@@ -66,7 +71,8 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-replace');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
+    grunt.loadNpmTasks('grunt-contrib-watch');
     // Default task(s).
-    grunt.registerTask('default', ['less:development']);
+    grunt.registerTask('default', ['watch']);
     grunt.registerTask('build', ['less:production', 'htmlmin:dist', 'replace:dist']);
 }
