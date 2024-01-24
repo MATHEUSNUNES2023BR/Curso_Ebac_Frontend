@@ -23,11 +23,7 @@ inputFile.addEventListener('change', (e)=>{
         })
         
         reader.readAsDataURL(file)
-        console.log(file)
         alert("Arquivo adicionado com sucesso!")
-    }else{
-        alert("Adicione imagemaa")
     }
-    
 })
 })
