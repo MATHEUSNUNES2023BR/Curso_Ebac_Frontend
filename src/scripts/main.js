@@ -6,7 +6,6 @@ inputFile.addEventListener('change', (e)=>{
     const file = inputTarget.files[0]
     if(file){
         const reader = new FileReader()
-
         reader.addEventListener('load',(e)=>{
             const readerTarget = e.target
             const div = document.createElement('div')
