@@ -27,20 +27,32 @@ function ContaBancaria(conta, agencia, banco, saldo){
     }
 }
 
+function Carro(fabricante, modelo, ano){
+    this.proprietario = Object.create(Pessoa.prototype)
+    this.fabricante = fabricante
+    this.modelo = modelo
+    this.ano = ano
+}
 const matheus = new Pessoa('Matheus', '1234567-8', '23')
 const matheus_conta = new ContaBancaria('554422', '32', 'brasil', 10)
 
-// Adiciona os valores herdados dos atributos da classe Pessoa
+// Adiciona os valores herdados dos atributos da classe mãe Pessoa
 matheus_conta.pessoa.nome = matheus.nome
 matheus_conta.pessoa.cpf = matheus.cpf 
 matheus_conta.pessoa.idade = matheus.idade
 
+const matheus_carro = new Carro('Chevrolet', 'Onix', 2022)
+// Adiciona os valores herdados dos atributos da classe mãe Pessoa
+matheus_carro.proprietario.nome = matheus.nome
+matheus_carro.proprietario.idade = matheus.idade
+matheus_carro.proprietario.cpf = matheus.cpf
+
+
 //matheus
 console.log(matheus)
-
+console.log('====================================================================')
 //matheus_conta
 console.log(matheus_conta)
-
 // Pegar saldo
 matheus_conta.getSaldo()
 
@@ -51,3 +63,6 @@ matheus_conta.getSaldo()
 //Remove 5
 matheus_conta.setSaldo_RE(5)
 matheus_conta.getSaldo()
+console.log('====================================================================')
+//Carro
+console.log(matheus_carro)
